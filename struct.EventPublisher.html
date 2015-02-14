@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `EventPublisher` struct in crate `event`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, EventPublisher">
+
+    <title>event::EventPublisher - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>event</a></p><div class='block struct'><h2>Structs</h2><a class='struct current' href='struct.EventPublisher.html' title='EventPublisher. Works similarly to C#&#39;s event publishing pattern. Event handling functions are subscribed to the publisher. Whenever the publisher fires an event it calls all subscribed event handler functions. Use event::EventPublisher::&lt;E&gt;::new() to construct'>EventPublisher</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.Event.html' title='Enumerator of the Event type. Whatever type E of Event::Args you implement here is the type E that will be used for the EventPublisher.'>Event</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>event</a>::<wbr><a class='struct' href=''>EventPublisher</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-14' href='../src/event/lib.rs.html#18-20'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct EventPublisher&lt;E&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>EventPublisher. Works similarly to C#&#39;s event publishing pattern. Event handling functions are subscribed to the publisher.
+Whenever the publisher fires an event it calls all subscribed event handler functions.
+Use event::EventPublisher::<E>::new() to construct</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;E&gt; <a class='struct' href='../event/struct.EventPublisher.html' title='event::EventPublisher'>EventPublisher</a>&lt;E&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='struct' href='../event/struct.EventPublisher.html' title='event::EventPublisher'>EventPublisher</a>&lt;E&gt;</code></h4>
+<div class='docblock'><p>Event publisher constructor.</p>
+</div><h4 id='method.subscribe_handler' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.subscribe_handler' class='fnname'>subscribe_handler</a>(&amp;mut self, handler_box: <a class='struct' href='http://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.Fn.html' title='core::ops::Fn'>Fn</a>(&amp;<a class='enum' href='../event/enum.Event.html' title='event::Event'>Event</a>&lt;E&gt;) + 'static&gt;)</code></h4>
+<div class='docblock'><p>Subscribes event handler functions to the EventPublisher.
+INPUT:  handler_box: Box<Fn(&Event<E>) + &#39;static&gt;&gt;   handler_box is a box pointer to a function to handle an event of the type E. The function must
+    be capable of handling references to the event type set up by the publisher, rather than the raw event itself.
+OUTPUT: void</p>
+</div><h4 id='method.unsubscribe_handler' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.unsubscribe_handler' class='fnname'>unsubscribe_handler</a>(&amp;mut self, handler_box: <a class='struct' href='http://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.Fn.html' title='core::ops::Fn'>Fn</a>(&amp;<a class='enum' href='../event/enum.Event.html' title='event::Event'>Event</a>&lt;E&gt;) + 'static&gt;) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Unsubscribes an event handler from the publisher.
+INPUT:  handler_box: Box<Fn(&Event<E>) + &#39;static&gt;    handler_box is a box pointer to a function to handle an event of the type E.
+OUTPUT: bool    output is a bool of whether or not the function was found in the list of subscribed event handlers and subsequently removed.</p>
+</div><h4 id='method.publish_event' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.publish_event' class='fnname'>publish_event</a>(&amp;self, event: &amp;<a class='enum' href='../event/enum.Event.html' title='event::Event'>Event</a>&lt;E&gt;)</code></h4>
+<div class='docblock'><p>Publishes events, pushing the &amp;Event<E> to all handler functions stored by the event publisher.
+INPUT: event: &amp;Event<E>     Reference to the Event<E> being pushed to all handling functions.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "event";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
