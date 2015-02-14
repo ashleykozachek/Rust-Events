@@ -2,6 +2,7 @@
 name = "event"
 version = "0.8.0"
 authors = ["Matthew Kozachek <mkozachek@gmail.com>"]
+documentation = "https://mkozachek.github.io/Rust-Events/"
 repository = "https://github.com/mkozachek/Rust-Events"
 keywords = ["Events", "events", "event-driven",]
 license = "Apache-2.0"
