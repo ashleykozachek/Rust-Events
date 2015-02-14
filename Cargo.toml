@@ -1,5 +1,5 @@
 [package]
-name = "event"
+name = "rust_events"
 version = "0.8.0"
 authors = ["Matthew Kozachek <mkozachek@gmail.com>"]
 
