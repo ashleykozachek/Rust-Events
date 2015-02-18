@@ -1,13 +1,13 @@
 [package]
 name = "rust_events"
-version = "0.8.0"
+version = "0.8.1"
 authors = ["Matthew Kozachek <mkozachek@gmail.com>"]
 
 description = "A flexible event-handling library, based on the C# delegate model."
 
 documentation = "https://mkozachek.github.io/Rust-Events/"
 repository = "https://github.com/mkozachek/Rust-Events"
-keywords = ["Events", "events", "event-driven",]
+keywords = ["Events", "events", "event-driven","publisher"]
 license = "Apache-2.0"
 
 [lib]
