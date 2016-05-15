@@ -1,6 +1,6 @@
 [package]
 name = "rust_events"
-version = "0.8.1"
+version = "0.9.0"
 authors = ["Matthew Kozachek <mkozachek@gmail.com>"]
 
 description = "A flexible event-handling library, based on the C# delegate model."
